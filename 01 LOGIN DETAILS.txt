@@ -1,0 +1,11 @@
+---Admin Login Details---
+
+Email   : admin@gmail.com
+Password: Judith@123
+
+
+Load the Categories
+
+Load the Supplier
+
+
