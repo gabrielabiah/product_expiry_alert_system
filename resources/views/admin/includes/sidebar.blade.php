@@ -11,27 +11,21 @@
                     <a href="{{ route('dashboard') }}"><i class="fe fe-home"></i> <span>Dashboard</span></a>
                 </li>
 
-                @can('view-category')
-                    <li class="{{ route_is('categories.*') ? 'active' : '' }}">
-                        <a href="{{ route('categories.index') }}"><i class="fe fe-layout"></i> <span>Categories</span></a>
-                    </li>
-                @endcan
-
                 @can('view-purchase')
                     <li class="submenu">
-                        <a href="#"><i class="fe fe-star-o"></i> <span> Purchase</span> <span
+                        <a href="#"><i class="fe fe-star-o"></i> <span> Products</span> <span
                                 class="fas fa-chevron-down"></span></a>
                         <ul style="display: none;">
                             <li><a class="{{ route_is('purchases.*') ? 'active' : '' }}"
-                                    href="{{ route('purchases.index') }}">Purchase</a></li>
+                                    href="{{ route('purchases.index') }}">Products</a></li>
                             @can('create-purchase')
                                 <li><a class="{{ route_is('purchases.create') ? 'active' : '' }}"
-                                        href="{{ route('purchases.create') }}">Add Purchase</a></li>
+                                        href="{{ route('purchases.create') }}">Add Product</a></li>
                             @endcan
                         </ul>
                     </li>
                 @endcan
-
+<!-- 
                 @can('view-products')
                     <li class="submenu">
                         <a href="#"><i class="fe fe-document"></i> <span> Products</span> <span
@@ -53,7 +47,7 @@
                             @endcan
                         </ul>
                     </li>
-                @endcan
+                @endcan -->
 
 
                 @can('view-sales')
@@ -83,6 +77,12 @@
                                         href="{{ route('suppliers.create') }}">Add Supplier</a></li>
                             @endcan
                         </ul>
+                    </li>
+                @endcan
+
+                @can('view-category')
+                    <li class="{{ route_is('categories.*') ? 'active' : '' }}">
+                        <a href="{{ route('categories.index') }}"><i class="fe fe-layout"></i> <span>Product Categories</span></a>
                     </li>
                 @endcan
 

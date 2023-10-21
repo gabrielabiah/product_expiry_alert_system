@@ -9,3 +9,10 @@ Load the Categories
 Load the Supplier
 
 
+COMMANDS
+php artisan migrate  -- This runs the tables into the database
+
+php artisan serve -- This runs the system
+
+
+Ctrl + C -- Stop the system from running

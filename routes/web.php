@@ -31,6 +31,7 @@ use App\Http\Controllers\Admin\SupplierController;
 */
 Route::middleware(['auth'])->prefix('admin')->group(function(){
     Route::get('dashboard',[DashboardController::class,'index'])->name('dashboard');
+    
     Route::get('',[DashboardController::class,'Index']);
     Route::get('notification',[NotificationController::class,'markAsRead'])->name('mark-as-read');
     Route::get('notification-read',[NotificationController::class,'read'])->name('read');
@@ -82,4 +83,7 @@ Route::middleware(['guest'])->prefix('admin')->group(function () {
 
 Route::get('/', function () {
     return view('welcome');
+    
 });
+
+Route::get('home',[DashboardController::class,'index'])->name('home');

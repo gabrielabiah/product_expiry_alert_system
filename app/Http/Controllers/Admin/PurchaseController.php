@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 
 use App\Models\Category;
 use App\Models\Purchase;
+use App\Models\Product;
 use App\Models\Supplier;
 use Illuminate\Http\Request;
 use Yajra\DataTables\DataTables;
@@ -91,6 +92,7 @@ class PurchaseController extends Controller
      */
     public function store(Request $request)
     {
+
         $this->validate($request,[
             'product'=>'required|max:200',
             'category'=>'required',
@@ -105,7 +107,7 @@ class PurchaseController extends Controller
             $imageName = time().'.'.$request->image->extension();
             $request->image->move(public_path('storage/purchases'), $imageName);
         }
-        Purchase::create([
+       $purchase = Purchase::create([
             'product'=>$request->product,
             'category_id'=>$request->category,
             'supplier_id'=>$request->supplier,
@@ -114,7 +116,16 @@ class PurchaseController extends Controller
             'expiry_date'=>$request->expiry_date,
             'image'=>$imageName,
         ]);
-        $notifications = notify("Purchase has been added");
+
+        Product::create([
+            'purchase_id'=>$purchase->id,
+            'price'=>$request->price,
+            'discount'=>0,
+            'description'=>'desc',
+        ]);
+
+
+        $notifications = notify("Product has been added");
         return redirect()->route('purchases.index')->with($notifications);
     }
 

@@ -1,7 +1,7 @@
 @extends('admin.layouts.plain')
 
 @section('content')
-<h1>Pharmacy System</h1>
+<h1>P E A System</h1>
 <p class="account-subtitle">Login Panel</p>
 @if (session('login_error'))
 <x-alerts.danger :error="session('login_error')" />

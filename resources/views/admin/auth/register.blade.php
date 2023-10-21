@@ -1,7 +1,7 @@
 @extends('admin.layouts.plain')
 
 @section('content')
-<h1>Pharmacy System</h1>
+<h1>P E A System</h1>
 <p class="account-subtitle">Register as Sales Person</p>
 <!-- Visit codeastro.com for more projects -->
 <!-- Form -->

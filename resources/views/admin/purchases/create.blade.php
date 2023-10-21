@@ -7,7 +7,7 @@
 
 @push('page-header')
     <div class="col-sm-12">
-        <h3 class="page-title">Add Purchase</h3>
+        <h3 class="page-title">Add Product</h3>
         <ul class="breadcrumb">
             <li class="breadcrumb-item"><a href="{{ route('dashboard') }}">Dashboard</a></li>
             <li class="breadcrumb-item active">Add Purchase</li>
@@ -59,13 +59,21 @@
 
                         <div class="service-fields mb-3">
                             <div class="row">
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label>Cost Price<span class="text-danger">*</span></label>
                                         <input class="form-control" type="text" name="cost_price">
                                     </div>
                                 </div>
-                                <div class="col-lg-6">
+                                <div class="col-lg-4">
+                                    <div class="form-group">
+                                    <div class="form-group">
+                                    <label>Selling Price<span class="text-danger">*</span></label>
+                                    <input class="form-control" type="text" name="price">
+                                </div>
+                                    </div>
+                                </div>
+                                <div class="col-lg-4">
                                     <div class="form-group">
                                         <label>Quantity<span class="text-danger">*</span></label>
                                         <input class="form-control" type="text" name="quantity">

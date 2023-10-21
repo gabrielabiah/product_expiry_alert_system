@@ -6,10 +6,10 @@
 
 @push('page-header')
 <div class="col-sm-12">
-	<h3 class="page-title">Edit Purchase</h3>
+	<h3 class="page-title">Edit Product</h3>
 	<ul class="breadcrumb">
 		<li class="breadcrumb-item"><a href="{{route('dashboard')}}">Dashboard</a></li>
-		<li class="breadcrumb-item active">Edit Purchase</li>
+		<li class="breadcrumb-item active">Edit Product</li>
 	</ul>
 </div>
 @endpush
@@ -28,7 +28,7 @@
 					<div class="row">
 						<div class="col-lg-4">
 							<div class="form-group">
-								<label>Medicine Name<span class="text-danger">*</span></label>
+								<label>Product Name<span class="text-danger">*</span></label>
 								<input class="form-control" type="text" value="{{$purchase->product}}" name="product" >
 							</div>
 						</div>
@@ -57,13 +57,21 @@
 				
 				<div class="service-fields mb-3">
 					<div class="row">
-						<div class="col-lg-6">
+						<div class="col-lg-4">
 							<div class="form-group">
 								<label>Cost Price<span class="text-danger">*</span></label>
 								<input class="form-control" value="{{$purchase->cost_price}}" type="text" name="cost_price">
 							</div>
 						</div>
-						<div class="col-lg-6">
+						
+						<div class="col-lg-4">
+
+                                    <div class="form-group">
+                                    <label>Selling Price<span class="text-danger">*</span></label>
+                                    <input class="form-control" value="0" type="text" name="price">
+                                </div>
+</div>
+						<div class="col-lg-4">
 							<div class="form-group">
 								<label>Quantity<span class="text-danger">*</span></label>
 								<input class="form-control" value="{{$purchase->quantity}}" type="text" name="quantity">
